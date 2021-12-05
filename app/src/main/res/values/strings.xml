@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name" translatable="false">My Application</string>
     <string name="new_text">new_text</string>
     <string name="random">random</string>
+    <string name="next_activity">Next_activity</string>
+    <string name="Design">Design</string>
+    <string name="Settings">settings</string>
 </resources>
