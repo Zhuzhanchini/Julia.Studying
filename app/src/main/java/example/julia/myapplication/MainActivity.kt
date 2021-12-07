@@ -7,27 +7,32 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlin.random.Random
 
-private const val HELLO_KEY = "hello"
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var nextActivityButton: Button
+    lateinit var userRecyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        nextActivityButton = findViewById(R.id.next_activity_button)
+        val userList: List<User> = listOf(
+            User("Julia", 30),
+            User("Anastasia", 12),
+            User("Natalia", 49),
+            User("Oleg", 53)
+        )
 
-        nextActivityButton.setOnClickListener {
-            val link = Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.kids&hl=ru&gl=US")
-            val openBrowserIntent = Intent(Intent.ACTION_VIEW, link)
-            val chooser=Intent.createChooser(openBrowserIntent, "PlayMarket")
-            startActivity(chooser)
-        }
-
+        userRecyclerView = findViewById(R.id.user_recycler_view)
+        userRecyclerView.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        userRecyclerView.adapter = UserAdapter(userList)
+        userRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
 
     }
