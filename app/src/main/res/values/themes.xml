@@ -18,7 +18,7 @@
 
 
     <style name="Theme.MyApplication.TextView" parent="Widget.MaterialComponents.TextView">
-        <item name="android:textSize">40sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/coolcolor3</item>
 
     </style>

@@ -15,24 +15,23 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var userRecyclerView: RecyclerView
-
+    lateinit var carRecyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val userList: List<User> = listOf(
-            User("Julia", 30),
-            User("Anastasia", 12),
-            User("Natalia", 49),
-            User("Oleg", 53)
+        carRecyclerView = findViewById(R.id.car_recycler_view)
+
+        val carList:List<Car> = listOf(
+           Car("Honda Acord", R.drawable.hondaacord),
+            Car("Honda Civic", R.drawable.hondacivic),
+            Car("Honda NSX", R.drawable.hondansx)
+
         )
 
-        userRecyclerView = findViewById(R.id.user_recycler_view)
-        userRecyclerView.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        userRecyclerView.adapter = UserAdapter(userList)
-        userRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        carRecyclerView.layoutManager=LinearLayoutManager(this,
+            LinearLayoutManager.HORIZONTAL, false)
+        carRecyclerView.adapter=CarAdapter(carList)
 
 
     }

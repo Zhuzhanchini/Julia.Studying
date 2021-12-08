@@ -10,6 +10,6 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/user_recycler_view"/>
+        android:id="@+id/car_recycler_view"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
